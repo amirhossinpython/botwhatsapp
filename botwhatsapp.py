@@ -12,10 +12,10 @@ def get_response_from_api(user_input):
 
     try:
         response = requests.get(url, params=payload)
-        response.raise_for_status()  # بررسی وضعیت پاسخ
+        response.raise_for_status()  
 
         data = response.json()
-        return data['result']  # فقط نتیجه را برمی‌گرداند
+        return data['result']  
 
     except requests.exceptions.HTTPError as http_err:
         return f"HTTP error occurred: {http_err}"
@@ -92,7 +92,7 @@ def create_gui():
     status_label = tk.Label(root, text="وضعیت: آماده", font=("Arial", 10), fg="green")
     status_label.pack(pady=10)
 
-    # شروع حلقه اصلی GUI
+    # شروع حلقه اصلی
     root.mainloop()
 
 if __name__ == "__main__":
